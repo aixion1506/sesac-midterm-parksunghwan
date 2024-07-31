@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>박성환</title>
     <link rel="stylesheet" href="./public/index.css">
-    
+    s
 </head>
 <body>
     <main>
@@ -14,19 +14,21 @@
             <h1>Todo List</h1>
         </header>
         <section class="TodoContainer">
-            <form action="" class="TodoForm">
-                <input type="text">
-                <button>작성</button>
-            </form>
-            </div>
-            <div class="TodoBox">
-                <div class="Todo-List">
-                </div>
-
-            </div>
+            <div id="TodoBox" class="terminal space shadow">
+                <!-- 본문 내용 박스 -->
+                <div class="Todo">
+                  <!-- 본문 내용 폼 -->
+                  <form id="Todo-Form">
+                    <!--  본문 내용 입력 -->
+                    <input type="text" placeholder="today's todo"/>
+                    <button>작성</button>
+                  </form>  
+                  <ul id="Todo-List"></ul>        
+              </div>
         </section>
         
         
     </main>
+    <script src="./public/index.js"></script>
 </body>
 </html>
