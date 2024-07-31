@@ -13,6 +13,20 @@ const SavingTodos = () => {
   localStorage.setItem(Todos_Key, JSON.stringify(Todos));
 };
 
+const getTodos = () => {
+    fetch('https://jsonplaceholder.typicode.com/todos/2', {
+        metho: 'GET',
+        headers:{'Content-Type' : 'application/json'},
+    })
+        .then(response => response.json())
+        .then(data => console.log(data))
+
+        const div = document.createElement('div');
+        div.id = getTodos.title;
+        TodoList.appendChild(div)
+}
+
+
 
 const DeleteTodo = (event) => {
   const li = event.target.parentElement;
@@ -60,3 +74,11 @@ if (TodoDatas !== null) {
   Todos = ParsedTodos;
   ParsedTodos.forEach(addTodo);
 }
+
+
+getTodos
+
+window.addEventListener("DOMContentLoaded", (event) => {
+    getTodos()
+  });
+  
