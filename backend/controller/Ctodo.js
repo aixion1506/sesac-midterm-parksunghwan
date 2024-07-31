@@ -62,12 +62,7 @@ exports.patchTodoId = async (req, res) => {
           }); 
           if (!Todo) return res.json({'message': 'Todo not found'});
           res.json(Todo);
-        // if (!updatedTodo) return res.status(500).send('message: Todo not found');
-        // res.json(updatedTodo);
-
-      
     } catch (err) {
-        console.log("message: Todo not found")
         res.status(500).send('Internal Server Error');
     }
     
@@ -82,11 +77,12 @@ exports.deleteTodoId =  async (req, res) => {
         });
         console.log(isDeleted); // 1
 
-        if(isDeleted) return res.send(true);
-        else return res.send(false);
+        return res.json({
+            "message":  "Todo deleted successfully",
+            "deletedId": "1"
+        });
+        // else return res.json({'message': 'Todo not found'});
     } catch (err) {
-        console.log("message: Todo not found")
-        // res.status(500).send('message: Todo not found');
-        // res.status(500).send('Internal Server Error');
+        res.status(500).send('Internal Server Error');
     }
 }
