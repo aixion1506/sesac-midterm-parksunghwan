@@ -3,6 +3,7 @@ const router = express.Router();
 const controller = require('../controller/Ctodo');
 
 router.post('/', controller.postTodo);;
-router.get('/', controller.getTodo)
+router.get('/', controller.getTodos)
+router.get('/:id', controller.getTodoId);
 
 module.exports = router;
