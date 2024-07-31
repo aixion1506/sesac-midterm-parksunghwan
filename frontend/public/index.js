@@ -13,7 +13,7 @@ const SavingTodos = () => {
   localStorage.setItem(Todos_Key, JSON.stringify(Todos));
 };
 
-const getTodos = () => {
+const getTodos = (newTodo) => {
     fetch('https://jsonplaceholder.typicode.com/todos/2', {
         metho: 'GET',
         headers:{'Content-Type' : 'application/json'},
@@ -21,9 +21,7 @@ const getTodos = () => {
         .then(response => response.json())
         .then(data => console.log(data))
 
-        const div = document.createElement('div');
-        div.id = getTodos.title;
-        TodoList.appendChild(div)
+        addTodo(getTodos());
 }
 
 
