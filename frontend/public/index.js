@@ -23,16 +23,18 @@ const DeleteTodo = (event) => {
 
 
 const addTodo = (newTodo) => {
-  const li = document.createElement('li');
-  li.id = newTodo.id;
-  const Button = document.createElement('button');
-  Button.innerText = '❌';
+  const div = document.createElement('div');
+  div.id = newTodo.id;
+  const checkbox = document.createElement('button');
   const span = document.createElement('span');
   span.innerText = newTodo.text;
+  const Button = document.createElement('button');
+  Button.innerText = 'X';
   Button.addEventListener('click', DeleteTodo);
-  li.appendChild(Button);
-  li.appendChild(span);
-  TodoList.appendChild(li);
+  div.appendChild(checkbox);
+  div.appendChild(span);
+  div.appendChild(Button);
+  TodoList.appendChild(div);
 };
 
 
