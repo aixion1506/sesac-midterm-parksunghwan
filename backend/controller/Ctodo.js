@@ -72,16 +72,16 @@ exports.patchTodoId = async (req, res) => {
 exports.deleteTodoId =  async (req, res) => {
     try {
         const { id } =req.params;
-        const isDeleted = await Player.destroy({
+        const isDeleted = await todo.destroy({
             where: {id}
         });
         console.log(isDeleted); // 1
 
-        return res.json({
+        if (isDeleted) return res.json({
             "message":  "Todo deleted successfully",
             "deletedId": "1"
         });
-        // else return res.json({'message': 'Todo not found'});
+        else return res.json({'message': 'Todo not found'});
     } catch (err) {
         res.status(500).send('Internal Server Error');
     }
