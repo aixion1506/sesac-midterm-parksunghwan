@@ -7,7 +7,7 @@ Content-Type: application/json; charset=UTF-8
 
 {
   "title": "책 읽기",
-  "done": false
+  "done": true
 }
 
 
@@ -59,7 +59,7 @@ Content-Type: application/json; charset=UTF-8
 
 
 ### 특정 ID를 갖는 Todo 삭제 (case1. 존재하는 Todo ID로 삭제하는 경우)
-DELETE {{server}}/todos/1
+DELETE {{server}}/todos/3
 
 
 ### 특정 ID를 갖는 Todo 삭제 (case2. 존재하지 않는 Todo ID로 삭제하는 경우)
